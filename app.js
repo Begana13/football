@@ -1,21 +1,21 @@
 // This roster will later be connected to the website's admin dashboard.
 const players = [
-  { name: "Ramiz Azami", team: "Team Red", goals: 0, assists: 4, photo: "ramiz-azami.png" },
-  { name: "Shaber Khan", team: "Team Red", goals: 0, assists: 0, photo: "shaber-khan.png" },
-  { name: "Wahid Wessal", team: "Team Red", goals: 2, assists: 0, photo: "wahid-wessal.png" },
-  { name: "Arash Azami", team: "Team Red", goals: 0, assists: 0, photo: "arash-azami.png" },
-  { name: "Musawer Begana", team: "Team Red", goals: 4, assists: 0, photo: "musawer-begana.png" },
-  { name: "Bogdan", team: "Team Red", goals: 1, assists: 0, photo: "red-placeholder.png" },
-  { name: "Omar", team: "Team Red", goals: 1, assists: 0, photo: "red-placeholder.png" },
-  { name: "Mohsen", team: "Team Red", goals: 0, assists: 0, photo: "red-placeholder.png" },
-  { name: "Usman Azami", team: "Team Blue", goals: 0, assists: 2, photo: "usman-azami.png" },
-  { name: "Eltaf Wahid", team: "Team Blue", goals: 0, assists: 3, photo: "eltaf-wahid.png" },
-  { name: "Mubashir Begana", team: "Team Blue", goals: 2, assists: 0, photo: "mubashir-begana.png" },
-  { name: "Muqadas Begana", team: "Team Blue", goals: 5, assists: 0, photo: "muqadas-begana.png" },
-  { name: "Rahmatullah Begana", team: "Team Blue", position: "Goalkeeper", goals: 0, assists: 0, photo: "rahmatullah-begana.png" },
-  { name: "Fabian", team: "Team Blue", goals: 1, assists: 0, photo: "blue-placeholder.png" },
-  { name: "Ahmad", team: "Team Blue", goals: 0, assists: 0, photo: "blue-placeholder.png" },
-  { name: "Suhrab", team: "Team Blue", goals: 0, assists: 0, photo: "blue-placeholder.png" }
+  { name: "Ramiz Azami", team: "Team Red", goals: 0, assists: 4, photo: "ramiz-azami.png", leaderPhoto: "ramiz-azami-board.png" },
+  { name: "Shaber Khan", team: "Team Red", goals: 0, assists: 0, photo: "shaber-khan.png", leaderPhoto: "shaber-khan-board.png" },
+  { name: "Wahid Wessal", team: "Team Red", goals: 2, assists: 0, photo: "wahid-wessal.png", leaderPhoto: "wahid-wessal-board.png" },
+  { name: "Arash Azami", team: "Team Red", goals: 0, assists: 0, photo: "arash-azami.png", leaderPhoto: "arash-azami-board.png" },
+  { name: "Musawer Begana", team: "Team Red", goals: 4, assists: 0, photo: "musawer-begana.png", leaderPhoto: "musawer-begana-board.png" },
+  { name: "Bogdan", team: "Team Red", goals: 1, assists: 0, photo: "red-placeholder.png", leaderPhoto: "red-placeholder-board.png" },
+  { name: "Omar", team: "Team Red", goals: 1, assists: 0, photo: "red-placeholder.png", leaderPhoto: "red-placeholder-board.png" },
+  { name: "Mohsen", team: "Team Red", goals: 0, assists: 0, photo: "red-placeholder.png", leaderPhoto: "red-placeholder-board.png" },
+  { name: "Usman Azami", team: "Team Blue", goals: 0, assists: 2, photo: "usman-azami.png", leaderPhoto: "usman-azami-board.png" },
+  { name: "Eltaf Wahid", team: "Team Blue", goals: 0, assists: 3, photo: "eltaf-wahid.png", leaderPhoto: "eltaf-wahid-board.png" },
+  { name: "Mubashir Begana", team: "Team Blue", goals: 2, assists: 0, photo: "mubashir-begana.png", leaderPhoto: "mubashir-begana-board.png" },
+  { name: "Muqadas Begana", team: "Team Blue", goals: 5, assists: 0, photo: "muqadas-begana.png", leaderPhoto: "muqadas-begana-board.png" },
+  { name: "Rahmatullah Begana", team: "Team Blue", position: "Goalkeeper", goals: 0, assists: 0, photo: "rahmatullah-begana.png", leaderPhoto: "rahmatullah-begana-board.png" },
+  { name: "Fabian", team: "Team Blue", goals: 1, assists: 0, photo: "blue-placeholder.png", leaderPhoto: "blue-placeholder-board.png" },
+  { name: "Ahmad", team: "Team Blue", goals: 0, assists: 0, photo: "blue-placeholder.png", leaderPhoto: "blue-placeholder-board.png" },
+  { name: "Suhrab", team: "Team Blue", goals: 0, assists: 0, photo: "blue-placeholder.png", leaderPhoto: "blue-placeholder-board.png" }
 ];
 
 // Match history, newest match first.
@@ -47,12 +47,11 @@ function renderLeaderboard() {
     return `
       <article class="ranking-card ${placement}">
         <div class="ranking-position">
-          ${rank === 1 ? '<span class="rank-crown" aria-hidden="true">♛</span>' : ""}
-          <span class="laurel" aria-hidden="true">❧</span>
+          ${rank === 1 ? '<svg class="rank-crown" aria-hidden="true" viewBox="0 0 64 42"><path d="M7 33 3 9l16 12L32 3l13 18L61 9l-4 24H7Zm1 5h48"/></svg>' : ""}
+          <svg class="rank-laurel" aria-hidden="true" viewBox="0 0 120 100"><g class="branches"><path d="M53 89C28 75 15 49 21 20"/><path d="M67 89c25-14 38-40 32-69"/></g><g class="leaves"><ellipse cx="19" cy="27" rx="6" ry="12" transform="rotate(-28 19 27)"/><ellipse cx="22" cy="44" rx="6" ry="12" transform="rotate(-43 22 44)"/><ellipse cx="29" cy="60" rx="6" ry="12" transform="rotate(-55 29 60)"/><ellipse cx="40" cy="74" rx="6" ry="12" transform="rotate(-64 40 74)"/><ellipse cx="101" cy="27" rx="6" ry="12" transform="rotate(28 101 27)"/><ellipse cx="98" cy="44" rx="6" ry="12" transform="rotate(43 98 44)"/><ellipse cx="91" cy="60" rx="6" ry="12" transform="rotate(55 91 60)"/><ellipse cx="80" cy="74" rx="6" ry="12" transform="rotate(64 80 74)"/></g></svg>
           <strong>${rankSuffix(rank)}</strong>
-          <span class="laurel right" aria-hidden="true">❧</span>
         </div>
-        <div class="ranking-photo"><img src="${player.photo}" alt="${player.name}" loading="lazy" /></div>
+        <div class="ranking-photo"><img src="${player.leaderPhoto || player.photo}" alt="${player.name}" loading="lazy" /></div>
         <div class="ranking-name"><strong>${player.name}</strong><span>${player.team}${player.position ? ` · ${player.position}` : ""}</span></div>
         <div class="ranking-stat"><span aria-hidden="true">${activeLeaderboardStat === "goals" ? "⚽" : "👟"}</span><strong>${player[activeLeaderboardStat]}</strong><small>${label}</small></div>
       </article>`;
