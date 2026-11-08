@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="FC Afghanistan and FC Khorasan team stats, leaders, and match history." />
+  <meta name="description" content="Team Red and Team Blue player stats, leaders, and match history." />
   <title>Matchday — Team Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +23,7 @@
     </a>
     <nav aria-label="Main navigation">
       <a href="#leaders">Leaders</a>
+      <a href="#squads">Players</a>
       <a href="#matches">Matches</a>
     </nav>
     <div class="live-pill"><span></span> Season live</div>
@@ -36,10 +37,10 @@
 
       <div class="scoreboard reveal" aria-label="Team season score">
         <article class="team team-afg">
-          <div class="crest crest-afg" aria-label="FC Afghanistan crest">FA</div>
+          <div class="crest-image"><img src="team-red.png" alt="Team Red crest" /></div>
           <div>
-            <p class="team-label">CRIMSON</p>
-            <h2>FC Afghanistan</h2>
+            <p class="team-label">THE REDS</p>
+            <h2>Team Red</h2>
             <p><strong id="afgWins">0</strong> wins · <span id="afgGoals">0</span> goals</p>
           </div>
         </article>
@@ -52,28 +53,44 @@
 
         <article class="team team-kho">
           <div>
-            <p class="team-label">AZURE</p>
-            <h2>FC Khorasan</h2>
+            <p class="team-label">THE BLUES</p>
+            <h2>Team Blue</h2>
             <p><strong id="khoWins">0</strong> wins · <span id="khoGoals">0</span> goals</p>
           </div>
-          <div class="crest crest-kho" aria-label="FC Khorasan crest">FK</div>
+          <div class="crest-image"><img src="team-blue.png" alt="Team Blue crest" /></div>
         </article>
       </div>
     </section>
 
-    <section class="section" id="leaders" aria-labelledby="leaders-title">
-      <div class="section-heading reveal">
-        <div>
-          <p class="eyebrow">THE DIFFERENCE MAKERS</p>
-          <h2 id="leaders-title">Player leaders</h2>
-        </div>
-        <p>Season totals</p>
+    <section class="section leaderboard-section" id="leaders" aria-labelledby="leaders-title">
+      <div class="leaderboard-heading reveal">
+        <div class="trophy-mark" aria-hidden="true"><span>❧</span><strong>🏆</strong><span>❧</span></div>
+        <h2 id="leaders-title">TOP SCORERS</h2>
+        <div class="leaderboard-subtitle"><i></i><span>LEADERBOARD</span><i></i></div>
       </div>
 
-      <div class="leader-grid">
-        <article class="leader-card coral reveal" id="scorerCard"></article>
-        <article class="leader-card blue reveal" id="assistCard"></article>
+      <div class="leaderboard-tabs reveal" role="tablist" aria-label="Leaderboard statistic">
+        <button class="active" id="goalsTab" role="tab" aria-selected="true" data-stat="goals"><span aria-hidden="true">⚽</span> Goals</button>
+        <button id="assistsTab" role="tab" aria-selected="false" data-stat="assists"><span aria-hidden="true">👟</span> Assists</button>
       </div>
+
+      <div class="ranking-list" id="rankingList" aria-live="polite"></div>
+      <button class="see-more" id="seeMore" type="button" aria-expanded="false">See More <span aria-hidden="true">↓</span></button>
+    </section>
+
+    <section class="section squads-section" id="squads" aria-labelledby="squads-title">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">MEET THE PLAYERS</p>
+          <h2 id="squads-title">The squads</h2>
+        </div>
+        <p>Goals & assists</p>
+      </div>
+      <div class="squad-switcher reveal" role="group" aria-label="Choose a team">
+        <button class="active red-tab" data-team="Team Red"><span></span>Team Red</button>
+        <button class="blue-tab" data-team="Team Blue"><span></span>Team Blue</button>
+      </div>
+      <div class="player-grid" id="playerGrid" aria-live="polite"></div>
     </section>
 
     <section class="section matches-section" id="matches" aria-labelledby="matches-title">
